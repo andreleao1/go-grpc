@@ -10,6 +10,10 @@ message Category {
     string description = 3;
 }
 
+message CategoryId {
+    string id = 1;
+}
+
 message CreateCategoryRequest {
     string name = 1;
     string description = 2;
@@ -26,4 +30,5 @@ message CategoryList {
 service CategoryService {
     rpc CreateCategory(CreateCategoryRequest) returns (CategoryResponse) {}
     rpc ListCategories(Blank) returns (CategoryList) {}
+    rpc FindById(CategoryId) returns (CategoryResponse) {}
 }
